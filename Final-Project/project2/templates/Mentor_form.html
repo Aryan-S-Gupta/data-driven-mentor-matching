@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Form</title>
+    <!--Google Font-->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <!--Stylesheet-->
+    <style>
+        *,
+        *:before,
+        *:after {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+            font-weight: 500;
+        }
+
+        body {
+            height: 100vh;
+            background: linear-gradient(135deg,
+                    #0B60B0,
+                    #40A2D8);
+        }
+
+        strong {
+            color: red;
+        }
+
+        .container {
+            background-color: #ffffff;
+            width: 60%;
+            height: 80%;
+            min-width: 420px;
+            padding: 30px 50px;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            border-radius: 10px;
+            box-shadow: 20px 30px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        h1 {
+            font-size: 20px;
+            text-align: center;
+            color: #1c093c;
+        }
+
+        p {
+            position: relative;
+            margin: auto;
+            width: 100%;
+            text-align: center;
+            color: #606060;
+            font-size: 12px;
+            font-weight: 400;
+        }
+
+        form {
+            width: 100%;
+            position: relative;
+            margin: 15px auto 0 auto;
+        }
+
+        .row {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-gap: 20px 30px;
+            margin-bottom: 15px;
+        }
+
+        label {
+            color: #1c093c;
+            font-size: 13px;
+        }
+
+        textarea,
+        input,
+        select {
+            width: 100%;
+            font-weight: 400;
+            padding: 8px 10px;
+            border-radius: 5px;
+            border: 1.2px solid #c4cae0;
+            margin-top: 5px;
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        textarea:focus,
+        input:focus,
+        select:focus {
+            outline: none;
+            border-color: #0B60B0;
+        }
+
+        .column {
+            position: relative;
+            font-size: 13px;
+        }
+
+        button {
+            display: none;
+        }
+
+        .submit-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0px auto;
+            border: none;
+            padding: 5px 20px;
+            background: linear-gradient(130deg,
+                    #0B60B0,
+                    #40A2D8);
+            color: #ffffff;
+            border-radius: 3px;
+            cursor: pointer;
+            width: 50%;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Mentor Information Form</h1>
+        <p>Please Enter your Information <br>so that we can connect you with other people</p>
+        <form action="/register2" method="post">
+            <div class="row">
+                <div class="column">
+                    <label for="name">Name<strong>*</strong></label>
+                    <input type="text" id="name" placeholder="Your name here" name="name" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column">
+                    <label for="industry">Industry<strong>*</strong></label>
+                    <select id="industry" name="industry" required>
+                        <option value="" selected disabled hidden>Select Industry</option>
+                        <option value="Technology">Technology</option>
+                        <option value="Healthcare">Healthcare</option>
+                        <option value="Finance">Finance</option>
+                        <option value="Retail">Retail</option>
+                        <option value="Food and Beverage">Food and Beverage</option>
+                        <option value="Manufacturing">Manufacturing</option>
+                        <option value="Education">Education</option>
+                        <option value="Real Estate">Real Estate</option>
+                        <option value="Entertainment">Entertainment</option>
+                        <option value="Energy">Energy</option>
+                    </select>
+                </div>
+                <div class="column">
+                    <label for="experience">Industry Experience(Years)<strong>*</strong></label>
+                    <input type="number" id="experience" placeholder="Your Experience here" name="industry_exp"
+                        required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column">
+                    <label for="industry">Specific Support Needs<strong>*</strong></label>
+                    <table>
+                        <tr>
+                            <td><input type="checkbox" name="name2" value="TRUE" onclick="updateHiddenInputs()"
+                                    id="name2">
+                            </td>
+                            <td><label for="name2">Business Strategy</label></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="name3" value="TRUE" onclick="updateHiddenInputs()"
+                                    id="name3">
+                            </td>
+                            <td><label for="name3">Marketing and Sales</label></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="name4" value="TRUE" onclick="updateHiddenInputs()"
+                                    id="name4">
+                            </td>
+                            <td><label for="name4">Product Development</label></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="name5" value="TRUE" onclick="updateHiddenInputs()"
+                                    id="name5">
+                            </td>
+                            <td><label for="name5">Operations & Logistics</label></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="name6" value="TRUE" onclick="updateHiddenInputs()"
+                                    id="name6">
+                            </td>
+                            <td><label for="name6">Financial Management</label></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="column">
+                    <table>
+                        <tr>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="name7" value="TRUE" onclick="updateHiddenInputs()"
+                                    id="name7">
+                            </td>
+                            <td><label for="name7">Human Resources</label></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="name8" value="TRUE" onclick="updateHiddenInputs()"
+                                    id="name8">
+                            </td>
+                            <td><label for="name8">Legal and Regulatory Compliance</label></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="name9" value="TRUE" onclick="updateHiddenInputs()"
+                                    id="name9">
+                            </td>
+                            <td><label for="name9">Technology and IT</label></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="name10" value="TRUE" onclick="updateHiddenInputs()"
+                                    id="name10"></td>
+                            <td><label for="name10">Scaling and Growth</label></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="name11" value="TRUE" onclick="updateHiddenInputs()"
+                                    id="name11"></td>
+                            <td><label for="name11">Sustainability and Social Impact</label></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <input type="hidden" name="name2Value" value="FALSE">
+            <input type="hidden" name="name3Value" value="FALSE">
+            <input type="hidden" name="name4Value" value="FALSE">
+            <input type="hidden" name="name5Value" value="FALSE">
+            <input type="hidden" name="name6Value" value="FALSE">
+            <input type="hidden" name="name7Value" value="FALSE">
+            <input type="hidden" name="name8Value" value="FALSE">
+            <input type="hidden" name="name9Value" value="FALSE">
+            <input type="hidden" name="name10Value" value="FALSE">
+            <input type="hidden" name="name11Value" value="FALSE">
+            <div class="row">
+                <div class="column">
+                    <label for="accomplishments">Relevant Accomplishments or Awards<strong>*</strong></label>
+                    <textarea id="accomplishments" name="awards" placeholder="Describe your Accomplishments in detail here" rows="3"
+                        required></textarea>
+                </div>
+            </div>
+            <input type="submit" class="submit-btn" value="Submit">
+        </form>
+    </div>
+</body>
+
+</html>

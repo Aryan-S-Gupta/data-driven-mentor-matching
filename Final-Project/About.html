@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dosis:wght@100;300;400;500;600;700;800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "Montserrat", sans-serif;
+        }
+
+        button {
+            padding: 10px 20px;
+            /* Add padding to buttons */
+            /* background-color: \; */
+            /* Change button background color */
+            /* color: #fff; */
+            /* Change button text color */
+            border: none;
+            /* Remove button border */
+            border-radius: 5px;
+            /* Add border radius to button */
+            cursor: pointer;
+            transition: background-color 0.3s;
+            /* Add transition effect */
+        }
+
+        button:hover {
+            background-color: #F0EDCF;
+            color: #40A2D8;
+            /* Change button background color on hover */
+        }
+
+        .header {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            background-color: white;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 80%;
+            height: 70px;
+            border-bottom: 2px solid black;
+        }
+
+        .logo a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            font-size: 20px;
+            margin-left: -37px;
+            cursor: pointer;
+        }
+
+        .nav a {
+            text-decoration: none;
+            padding-bottom: 2px;
+            margin-right: 50px;
+            color: black;
+            font-weight: 550;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .nav a::before {
+            position: absolute;
+            content: '';
+            top: 100%;
+            left: 0;
+            height: 2px;
+            width: 0%;
+            background: black;
+            transition: all ease 0.4s;
+        }
+
+        .nav a:hover::before {
+            width: 100%;
+        }
+
+        /* About Section Styles */
+        .about {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 90vh;
+        }
+
+        .main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 80%;
+            max-width: 1200px;
+            height: 60vh;
+            margin: 0 auto;
+            padding: 50px;
+            background: white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .main img {
+            width: 40%;
+            margin-bottom: 20px;
+        }
+
+        .all-text {
+            margin-top: 20px;
+            width: 60%;
+        }
+
+        .all-text h1 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #111;
+            margin-bottom: 20px;
+        }
+
+        .all-text p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #777;
+            margin-bottom: 30px;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        .btn {
+            display: flex;
+        }
+
+        .btn button {
+            padding: 15px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #0B60B0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+            transition: background-color 0.1s;
+        }
+
+        .btn button:hover {
+            background-color: #F0EDCF;
+            color: #40A2D8;
+            /* Change button background color on hover */
+        }
+
+        /* Media Queries */
+        @media screen and (max-width: 768px) {
+            .main {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .all-text {
+                order: 2;
+                margin-top: 20px;
+            }
+
+            .main img {
+                margin-bottom: 30px;
+            }   
+        }
+
+
+
+        #person {
+            padding: 10px;
+            border-radius: 5px;
+            background: none;
+            margin-top: 5px;
+            font-size: 16px;
+            font-weight: 400;
+            outline: none;
+            border: none;
+            font-weight: 550;
+            position: relative;
+            cursor: pointer;
+            color: black;
+        }
+
+        #icon {
+            width: 40px;
+            /* Adjust width as needed */
+            height: 40px;
+            /* Adjust height as needed */
+            background-image: url("/Final-Project/img/logo.jpg");
+            /* background-color: red; */
+            /* Replace "path/to/your/image.jpg" with the actual path to your image */
+            background-size: cover;
+            /* Adjust background size as needed */
+            background-position: center;
+            /* Adjust background position as needed */
+            border-radius: 50%;
+            cursor: pointer;
+            float: right;
+            margin-left: -100px;
+            margin-top: 5px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <form action="/submit" method="post">
+        <div class="header">
+            <div class="container">
+                <div class="logo"><a href="#">Business Bridge</a></div>
+                <div class="nav">
+                    <a href="{{'/'}}">Home</a>
+                    <a href="{{'contact'}}">Contact Us</a>
+                    <a href="{{'about'}}">About</a>
+                    <a>
+                        <select name="person" id="person">
+                            <option value="mentor" name="m" selected>Mentor</option>
+                            <option value="entrepreneur" name="e">Entrepreneur</option>
+                        </select>
+                    </a>
+                    <a href="#"></a>
+                    <div id="icon"></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <section class="about">
+            <div class="main">
+                <img src="img/Screenshot 2024-03-16 230351.png" alt="About Us Image">
+                <div class="all-text">
+                    <h1>A House Of Creative & Intelligent</h1>
+                    <p>Our platform fosters connections between experienced professionals and emerging talents in
+                        various fields, emphasizing sustainability and inclusivity. Using advanced machine learning, we
+                        ensure personalized mentor-entrepreneur matches for impactful partnerships. Supported by the
+                        UNDP and focused on SDG 8, we empower entrepreneurs globally to achieve their goals and enhance
+                        economic growth. Join us in our mission to provide guidance and support for every entrepreneur's
+                        success.</p>
+                    <div class="btn">
+                        <button type="button">Learn More</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </form>
+</body>
+
+</html>

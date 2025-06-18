@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+</head>
+<style>
+    @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: "Montserrat", sans-serif;
+    }
+
+    body {
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    h1,
+    h2 {
+        margin: 0px 150px;
+        /* Add margin-bottom to headings */
+    }
+
+    h1 {
+        margin-top: 40px;
+    }
+
+    p {
+        margin: 0px 150px;
+        margin-right: 350px;
+        margin-left: 240px;
+        margin-bottom: 20px;
+        /* Add margin-bottom to paragraphs */
+        line-height: 1.5;
+        /* Add line height for better readability */
+    }
+
+    button {
+        padding: 20px 85px;
+        /* Add padding to buttons */
+        /* background-color: \; */
+        /* Change button background color */
+        /* color: #fff; */
+        /* Change button text color */
+        border: none;
+        /* Remove button border */
+        border-radius: 5px;
+        /* Add border radius to button */
+        cursor: pointer;
+        transition: background-color 0.3s;
+        margin-left: 40px;
+        margin-right: 40px;
+        /* Add transition effect */
+        font-size: 20px;
+        font-weight: 600;
+        background-color: #40A2D8;
+        transition: all 0.3s;
+    }
+
+    button:hover {
+        background-color: #F0EDCF;
+        color: #40A2D8;
+        /* Change button background color on hover */
+    }
+
+    .header {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        background-color: white;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 80%;
+        height: 70px;
+        border-bottom: 6px solid #F0EDCF;
+    }
+
+    .logo a {
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 20px;
+        margin-left: -37px;
+        cursor: pointer;
+        color: #000000;
+    }
+
+    .nav a {
+        text-decoration: none;
+        padding-bottom: 2px;
+        margin-right: 50px;
+        font-weight: 550;
+        position: relative;
+        cursor: pointer;
+        color: black;
+    }
+
+    .nav a::before {
+        position: absolute;
+        content: '';
+        top: 100%;
+        left: 0;
+        height: 2px;
+        width: 0%;
+        background: black;
+        transition: all ease 0.4s;
+    }
+
+    .nav a:hover::before {
+        width: 100%;
+    }
+
+    table {
+        width: 50vw;
+        height: 15vh;
+        max-width: 90%;
+        background-color: #f4f4f4;
+        border-collapse: collapse;
+    }
+
+    th {
+        text-decoration: underline;
+    }
+
+    th,
+    td {
+        padding: 15px;
+        text-align: center;
+        border-bottom: 1px solid #ddd;
+    }
+
+    th {
+        background-color: #f4f4f4;
+    }
+
+    button {
+        background-color: #0B60B0;
+        color: white;
+        border: none;
+        padding: 8px 10px;
+        cursor: pointer;
+        border-radius: 4px;
+        margin-right: 5px;
+        transition: background-color 0.3s;
+    }
+
+    button:hover {
+        background-color: #0B60B0;
+    }
+
+    button i {
+        margin-right: 5px;
+    }
+
+    .header {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        background-color: #fafafa;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 80%;
+        height: 70px;
+        border-bottom: 2px solid black;
+    }
+
+    .nav a:not(:last-child)::before {
+        position: absolute;
+        content: '';
+        top: 100%;
+        left: 0;
+        height: 2px;
+        width: 0%;
+        background: black;
+        transition: all ease 0.4s;
+    }
+
+    .nav a:not(:last-child):hover::before {
+        width: 100%;
+    }
+
+
+    .btn-container {
+        padding: 20px;
+        margin-left: 390px;
+        margin-bottom: 20px;
+    }
+
+    .nav a button,
+    .nav-mobile a button {
+        text-decoration: none;
+        padding-bottom: 2px;
+        margin-right: 50px;
+        color: black;
+        font-weight: 550;
+        position: relative;
+        cursor: pointer;
+        background: none;
+        font-family: "Montserrat", sans-serif;
+        font-size: 16px;
+    }
+
+    .nav a button::before,
+    .nav-mobile a button::before {
+        position: absolute;
+        content: '';
+        top: calc(100% - 2px);
+        left: 0;
+        height: 2px;
+        width: 0%;
+        background: black;
+        transition: all ease 0.4s;
+    }
+
+    .nav a button:hover::before,
+    .nav-mobile a button:hover::before {
+        width: 100%;
+    }
+
+    .hamburger {
+        display: none;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+    }
+
+    .hamburger div {
+        width: 25px;
+        height: 3px;
+        background-color: black;
+        margin: 5px;
+    }
+
+    .tableHead tr th {
+        background-color: #40A2D8;
+        color: white;
+        font-weight: bold;
+    }
+
+    .tableBody tr td:hover {
+        color: #40A2D8;
+        background-color: hsl(0, 0%, 80%);
+    }
+
+    .table thead tr th {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .table .tableBody tr td {
+        /* border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px; */
+        border-bottom: 3px solid #40A2D8;
+    }
+
+    @media only screen and (max-width:4000px) and (min-width:1015px) {
+        .nav-mobile {
+            display: none;
+        }
+    }
+
+    @media only screen and (max-width:1015px) {
+        .container {
+            justify-content: space-between;
+        }
+
+        .nav {
+            display: none;
+        }
+
+        .hamburger {
+            display: block;
+            margin-right: 10%;
+        }
+
+        .nav-mobile {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 70px;
+            right: 0;
+            background-color: #fafafa;
+            padding: 10px;
+            border-bottom: 2px solid black;
+            width: 100%;
+        }
+
+        .nav-mobile a {
+            text-decoration: none;
+            color: black;
+            margin-bottom: 10px;
+            text-align: center;
+            font-weight: 555;
+        }
+
+        .nav-mobile a button {
+            margin-top: -3px;
+            margin: auto;
+        }
+
+        .logo {
+            margin-left: 10%;
+        }
+    }
+
+    #person {
+        padding: 10px;
+        border-radius: 5px;
+        background: none;
+        margin-top: 5px;
+        font-size: 16px;
+        font-weight: 400;
+        outline: none;
+        border: none;
+        font-weight: 550;
+        position: relative;
+        cursor: pointer;
+        color: black;
+    }
+
+    #icon {
+        width: 40px;
+        /* Adjust width as needed */
+        height: 40px;
+        /* Adjust height as needed */
+        background-image: url("/Final-Project/img/logo.jpg");
+        /* background-color: red; */
+        /* Replace "path/to/your/image.jpg" with the actual path to your image */
+        background-size: cover;
+        /* Adjust background size as needed */
+        background-position: center;
+        /* Adjust background position as needed */
+        border-radius: 50%;
+        cursor: pointer;
+        float: right;
+        margin-left: -100px;
+        margin-top: 5px;
+
+    }
+    
+</style>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="logo"><a href="#">Business Bridge</a></div>
+            <div class="nav">
+                <a href="{{'/'}}">Home</a>
+                <a href="{{'contact'}}">Contact Us</a>
+                <a href="{{'about'}}">About</a>
+                <a>
+                    <select name="person" id="person">
+                        <option value="mentor" name="m" selected>Mentor</option>
+                        <option value="entrepreneur" name="e">Entrepreneur</option>
+                    </select>
+                </a>
+                <a href="#"></a>
+                <div id="icon"></div>
+                </a>
+            </div>
+            <div class="hamburger" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="nav-mobile">
+                <a href="person.html">Home</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="about.html">About</a>
+                <a><button>Sign Out</button></a>
+            </div>
+        </div>
+    </div>
+    <h1>Data from CSV:</h1>
+    <table border="0" class="table">
+        <thead class="tableHead">
+            <tr>
+                {% for col in res.columns %}
+                <th>{{ col }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody class="tableBody">
+            {% for row in res.iterrows() %}
+            <tr>
+                {% for value in row[1] %}
+                <td align="center">{{ value }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <script>
+        function toggleMenu() {
+            const navMobile = document.querySelector('.nav-mobile');
+            navMobile.style.display = navMobile.style.display === 'none' ? 'flex' : 'none';
+        }
+    </script>
+</body>
+
+</html>

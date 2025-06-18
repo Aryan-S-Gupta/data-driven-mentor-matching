@@ -1,0 +1,12 @@
+full_name,company_organization,industry,business_strategy,marketing_sales,product_development,operations_logistics,financial_management,human_resources,legal_regulatory_compliance,technology_it,scaling_growth,sustainability_social_impact,description
+Entrepreneur Olivia,Global.Inc,Retail,False,False,True,True,True,True,True,False,False,False,Software Development
+Entrepreneur John,Govt.Inc,Healthcare,False,True,False,False,True,True,False,True,False,True,Apparel
+Entrepreneur Charlotte,Govt.Inc,Food and Beverage,True,False,False,True,False,True,False,False,True,True,Utilities
+Entrepreneur Warner,Global.LLC,Education,True,True,False,True,True,False,True,True,False,False,Film and Television
+Entrepreneur Kyle,Global.LLC,Technology,False,False,True,False,False,True,False,False,False,False,Healthcare Services
+Entrepreneur Brown,Govt.LLC,Manufacturing,False,False,False,False,True,True,False,True,True,True,Healthcare Services
+Entrepreneur Kyle,Global.Inc,Manufacturing,True,True,False,False,True,False,True,True,False,True,Gaming
+Entrepreneur Johnson,Pvt.LLC,Food and Beverage,False,False,False,False,True,True,False,False,False,False,K-12 Education
+Entrepreneur Isabella,Pvt.Inc,Healthcare,False,False,True,True,False,True,False,False,True,False,Higher Education
+Entrepreneur Amelia,Pvt.Inc,Retail,True,False,True,False,True,False,True,False,False,True,Gaming
+Shrey,university of petroleum and energy studies,Retail,FALSE,FALSE,TRUE,TRUE,FALSE,TRUE,TRUE,TRUE,FALSE,FALSE,no desc
