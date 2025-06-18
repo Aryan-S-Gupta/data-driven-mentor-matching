@@ -36,8 +36,20 @@
         /* exported handleSignoutClick */
 
         // TODO(developer): Set to client ID and API key from the Developer Console
-        const CLIENT_ID = '386059676154-v1motlho98sjj3eavpvh3uk7u6hgs6lg.apps.googleusercontent.com';
-        const API_KEY = 'AIzaSyB2gFY4iqotzrKHyOj3XO2mUZ1fkEOB_oQ';
+        let CLIENT_ID;
+        let API_KEY;
+
+        fetch('client_config.json')
+            .then(response => response.json())
+            .then(config => {
+                CLIENT_ID = config.CLIENT_ID;
+                API_KEY = config.API_KEY;
+                gapiLoaded(); // Call gapi setup after loading
+                gisLoaded();  // Also call GIS init here
+            })
+            .catch(err => {
+                console.error('Failed to load config:', err);
+            });
 
         // Discovery doc URL for APIs used by the quickstart
         const DISCOVERY_DOC = 'https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest';
@@ -194,8 +206,8 @@
         //     pre.appendChild(textContent);
         // }
     </script>
-    <script async defer src="https://apis.google.com/js/api.js" onload="gapiLoaded()"></script>
-    <script async defer src="https://accounts.google.com/gsi/client" onload="gisLoaded()"></script>
+    <script async defer src="https://apis.google.com/js/api.js"></script>
+    <script async defer src="https://accounts.google.com/gsi/client"></script>
 </body>
 
 </html>
