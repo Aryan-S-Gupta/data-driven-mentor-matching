@@ -1,0 +1,21 @@
+# Ignore common operating system files
+.DS_Store # macOS thumbnail files
+Thumbs.db # Windows thumbnail cache files
+
+# Ignore common Python files
+*.pyc
+__pycache__/
+.env # Environment variables
+venv/ # Virtual environment folder
+
+# Ignore Node.js modules
+node_modules/
+
+# Ignore sensitive credential files
+# This is the crucial line for your project:
+Files/gs_credential.json
+
+# Ignore other specific files/folders you don't want tracked
+# For example, if you have a logs directory:
+# logs/
+# *.log
